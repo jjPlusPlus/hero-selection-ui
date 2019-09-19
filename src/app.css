@@ -1,0 +1,10 @@
+@import 'styles/reset.css';
+@import 'styles/fonts.css';
+@import 'styles/components/hero-selection.css';
+
+body {
+  background-image: url("/img/bastion.jpg");
+}
+h1, h2, h3, h4, h5, h6, select {
+  font-family: "BigNoodleToo", sans-serif;
+}
