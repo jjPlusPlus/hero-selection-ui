@@ -60,10 +60,21 @@ class HeroSelection extends Component {
     this.state = {
       heroClass: { name: "attack", src: "/img/attack-icon.png" },
       dropdownVisible: false,
+      countdownTime: 30,
       animating: false,
       currentHero: { name: "Bastion", listSrc: "/img/heroes/bastion.png", bgSrc: "/img/hero-bg/bastion.png", portraitSrc: "/img/selected-heroes/bastion.png" },
     }
     this.handleHeroClassChange = this.handleHeroClassChange.bind(this);
+  }
+
+  componentDidMount() {
+    // start a timer to count down the countdown
+    setInterval(() => {
+      const newTime = this.state.countdownTime > 0 ? this.state.countdownTime - 1 : 30
+      this.setState({
+        countdownTime: newTime
+      })
+    }, 1000)
   }
 
   handleHeroClassChange(event) {
@@ -171,7 +182,7 @@ class HeroSelection extends Component {
         </div>
 
         <div className="countdown-wrapper">
-          <h3>ASSEMBLE YOUR TEAM: <span className="count">29</span></h3>
+          <h3>ASSEMBLE YOUR TEAM: </h3> <h3 className="count">{this.state.countdownTime}</h3>
         </div>
 
         <div className="team">
