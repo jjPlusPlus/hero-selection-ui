@@ -312,6 +312,13 @@
   .small-only {
     display: none !important;
   }
+  .hero-selection {
+    background-position-x: right;
+  }
+  .hero-selection.animating {
+    background-position-x: 1800px;
+    background-position-y: 250px;
+  }
   .level h1 {
     font-size: 12em;
   }
