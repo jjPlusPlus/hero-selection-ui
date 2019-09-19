@@ -82,6 +82,12 @@ class HeroSelection extends Component {
     }
   }
 
+  setSelectedHero(hero) {
+    this.setState({
+      currentHero: hero
+    })
+  }
+
   toggleDropdown() {
     this.setState({
       dropdownVisible: !this.state.dropdownVisible
@@ -184,9 +190,9 @@ class HeroSelection extends Component {
                 {
                   tankHeroes.map((hero, index) => {
                     return (
-                      <div key={index} className="hero-class--hero">
+                      <div key={index} className={"hero-class--hero " + (hero.name === this.state.currentHero.name ? "selected" : "")} onClick={() => this.setSelectedHero(hero)}>
                         <div className="hero-image">
-                          <img src={hero.listSrc} width="80px"/>
+                          <img src={hero.listSrc} width="90px"/>
                         </div>
                         <h4 className="hero-name">{hero.name}</h4>
                       </div>
@@ -207,9 +213,9 @@ class HeroSelection extends Component {
                 {
                   attackHeroes.map((hero, index) => {
                     return (
-                      <div key={index} className={"hero-class--hero " + (hero.name === this.state.currentHero.name ? "selected" : "")}>
+                      <div key={index} className={"hero-class--hero " + (hero.name === this.state.currentHero.name ? "selected" : "")} onClick={() => this.setSelectedHero(hero)}>
                         <div className="hero-image">
-                          <img src={hero.listSrc} width="100px"/>
+                          <img src={hero.listSrc} width="90px"/>
                         </div>
                         <h4 className="hero-name">{hero.name}</h4>
                       </div>
@@ -230,9 +236,9 @@ class HeroSelection extends Component {
                 {
                   supportHeroes.map((hero, index) => {
                     return (
-                      <div key={index} className="hero-class--hero">
+                      <div key={index} className={"hero-class--hero " + (hero.name === this.state.currentHero.name ? "selected" : "")} onClick={() => this.setSelectedHero(hero)}>
                         <div className="hero-image">
-                          <img src={hero.listSrc} width="80px"/>
+                          <img src={hero.listSrc} width="90px"/>
                         </div>
                         <h4 className="hero-name">{hero.name}</h4>
                       </div>
