@@ -15,12 +15,13 @@ const supportHeroes = [
   { name: "Lucio", listSrc: "/img/heroes/lucio.png", bgSrc: "/img/hero-bg/lucio.png", portraitSrc: "/img/selected-heroes/lucio.png" },
   { name: "Ana", listSrc: "/img/heroes/ana.png", bgSrc: "/img/hero-bg/ana.png", portraitSrc: "/img/selected-heroes/ana.png" },
   { name: "Mercy", listSrc: "/img/heroes/mercy.png", bgSrc: "/img/hero-bg/mercy.png", portraitSrc: "/img/selected-heroes/mercy.png" },
-  { name: "Baptiste", listSrc: "/img/heroes/mercy.png", bgSrc: "/img/hero-bg/baptiste.png", portraitSrc: "/img/selected-heroes/mercy.png" },
-  { name: "Moira", listSrc: "/img/heroes/mercy.png", bgSrc: "/img/hero-bg/moira.png", portraitSrc: "/img/selected-heroes/mercy.png" },
-  { name: "Brigitte", listSrc: "/img/heroes/mercy.png", bgSrc: "/img/hero-bg/brigitte.png", portraitSrc: "/img/selected-heroes/mercy.png" },
+  { name: "Baptiste", listSrc: "/img/heroes/baptiste.png", bgSrc: "/img/hero-bg/baptiste.png", portraitSrc: "/img/selected-heroes/baptiste.png" },
+  { name: "Moira", listSrc: "/img/heroes/moira.png", bgSrc: "/img/hero-bg/moira.png", portraitSrc: "/img/selected-heroes/moira.png" },
+  { name: "Brigitte", listSrc: "/img/heroes/brigitte.png", bgSrc: "/img/hero-bg/brigitte.png", portraitSrc: "/img/selected-heroes/brigitte.png" },
 ];
 
 const attackHeroes = [
+  { name: "Ashe", listSrc: "/img/heroes/ashe.png", bgSrc: "/img/hero-bg/ashe.png", portraitSrc: "/img/selected-heroes/ashe.png" },
   { name: "McCree", listSrc: "/img/heroes/mccree.png", bgSrc: "/img/hero-bg/mccree.png", portraitSrc: "/img/selected-heroes/mccree.png" },
   { name: "Pharah", listSrc: "/img/heroes/pharah.png", bgSrc: "/img/hero-bg/pharah.png", portraitSrc: "/img/selected-heroes/pharah.png" },
   { name: "Soldier 76", listSrc: "/img/heroes/soldier-76.png", bgSrc: "/img/hero-bg/soldier-76.png", portraitSrc: "/img/selected-heroes/soldier-76.png" },
@@ -30,7 +31,7 @@ const attackHeroes = [
   { name: "Mei", listSrc: "/img/heroes/mei.png", bgSrc: "/img/hero-bg/mei.png", portraitSrc: "/img/selected-heroes/mei.png" },
   { name: "Bastion", listSrc: "/img/heroes/bastion.png", bgSrc: "/img/hero-bg/bastion.png", portraitSrc: "/img/selected-heroes/bastion.png" },
   { name: "Junkrat", listSrc: "/img/heroes/junkrat.png", bgSrc: "/img/hero-bg/junkrat.png", portraitSrc: "/img/selected-heroes/junkrat.png" },
-  { name: "Doomfist", listSrc: "/img/heroes/junkrat.png", bgSrc: "/img/hero-bg/doomfist.png", portraitSrc: "/img/selected-heroes/junkrat.png" },
+  { name: "Doomfist", listSrc: "/img/heroes/doomfist.png", bgSrc: "/img/hero-bg/doomfist.png", portraitSrc: "/img/selected-heroes/doomfist.png" },
   { name: "Sombra", listSrc: "/img/heroes/sombra.png", bgSrc: "/img/hero-bg/sombra.png", portraitSrc: "/img/selected-heroes/sombra.png" },
   { name: "Symmetra", listSrc: "/img/heroes/symmetra.png", bgSrc: "/img/hero-bg/symmetra.png", portraitSrc: "/img/selected-heroes/symmetra.png" },
   { name: "Torbjorn", listSrc: "/img/heroes/torbjorn.png", bgSrc: "/img/hero-bg/torbjorn.png", portraitSrc: "/img/selected-heroes/torbjorn.png" },
@@ -40,12 +41,13 @@ const attackHeroes = [
 
 const tankHeroes = [
   { name: "Winston", listSrc: "/img/heroes/winston.png", bgSrc: "/img/hero-bg/winston.png", portraitSrc: "/img/selected-heroes/winston.png" },
+  { name: "D.Va", listSrc: "/img/heroes/dva.png", bgSrc: "/img/hero-bg/dva.png", portraitSrc: "/img/selected-heroes/dva.png" },
   { name: "Reinhardt", listSrc: "/img/heroes/reinhardt.png", bgSrc: "/img/hero-bg/reinhardt.png", portraitSrc: "/img/selected-heroes/reinhardt.png" },
   { name: "Orisa", listSrc: "/img/heroes/orisa.png", bgSrc: "/img/hero-bg/orisa.png", portraitSrc: "/img/selected-heroes/orisa.png" },
   { name: "Roadhog", listSrc: "/img/heroes/roadhog.png", bgSrc: "/img/hero-bg/roadhog.png", portraitSrc: "/img/selected-heroes/roadhog.png" },
   { name: "Zarya", listSrc: "/img/heroes/zarya.png", bgSrc: "/img/hero-bg/zarya.png", portraitSrc: "/img/selected-heroes/zarya.png" },
-  { name: "Hammond", listSrc: "/img/heroes/zarya.png", bgSrc: "/img/hero-bg/hammond.png", portraitSrc: "/img/selected-heroes/zarya.png" },
-  { name: "Sigma", listSrc: "/img/heroes/zarya.png", bgSrc: "/img/hero-bg/sigma.png", portraitSrc: "/img/selected-heroes/zarya.png" }
+  { name: "Hammond", listSrc: "/img/heroes/hammond.png", bgSrc: "/img/hero-bg/hammond.png", portraitSrc: "/img/selected-heroes/hammond.png" },
+  { name: "Sigma", listSrc: "/img/heroes/sigma.png", bgSrc: "/img/hero-bg/sigma.png", portraitSrc: "/img/selected-heroes/sigma.png" }
 ]
 
 // need: sigma, hammond, doomfist, moira, brigitte, baptiste
