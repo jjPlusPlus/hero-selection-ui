@@ -1,0 +1,251 @@
+
+.hero-selection{
+  background-image: url("/img/bastion.png");
+  background-size: auto;
+  background-position-y: 250px;
+  background-repeat: no-repeat;
+  max-height: 100vh;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.hero-selection:after {
+  content: "";
+  position: fixed;
+  left:0;
+  top:0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.2);
+  z-index:0;
+}
+
+
+.level {
+  padding: 5px;
+  position: relative;
+  z-index: 1;
+}
+.level h1 {
+  color: #D11323;
+  font-style: italic;
+  font-size: 4em;
+  margin: 1em 0em;
+  background: -webkit-linear-gradient(#D11323, rgba(255,255,255,0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin: 0px;
+  padding: 0px;
+}
+.level h2 {
+  color: #FFF;
+  font-size: 2em;
+  font-style: italic;
+  margin: 0px;
+  margin-top: -.2em;
+  margin-left: 1em;
+}
+
+.level h3 {
+  color: #BF8855;
+  font-size: 1em;
+  font-style: italic;
+  margin: 0px;
+  margin-top: -1.5em;
+  margin-left: 4em;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #FFF;
+  font-size: 4em;
+  font-style: italic;
+  font-weight: 300;
+  background: -webkit-linear-gradient(#FFF 30%, rgba(255,255,255,0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.5em;
+  margin-bottom: 0;
+}
+
+.countdown-wrapper {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.countdown-wrapper h3 {
+  color: #efefef;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 300;
+  background: -webkit-linear-gradient(#efefef 30%, rgba(255,255,255,0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.countdown-wrapper .count {
+  color: #F3D873;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: 300;
+  background: -webkit-linear-gradient(#F3D873 30%, rgba(255,255,255,0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  padding-left: 5px;
+}
+
+.team {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.45);
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  padding: 1em;
+  padding-top: 2em;
+}
+
+.teammate {
+  text-align: center;
+  margin-bottom: 0.25em;
+}
+
+.teammate-portrait {
+  background-image: url("/img/hero-portrait.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60px;
+}
+
+.teammate-selected-hero-image {
+  width: 35px;
+  clip-path: polygon(100% 0, 100% 58%, 79% 58%, 78% 68%, 51% 80%, 22% 68%, 23% 61%, 0 60%, 0 0 );
+}
+
+.teammate-gamertag {
+  color: #75BBEC;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 300;
+  background: -webkit-linear-gradient(#75BBEC 75%, rgba(255,255,255,0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.5em 0;
+}
+
+.heroes {
+  position: relative;
+  z-index: 1;
+}
+
+
+.hero-selection-dropdown {
+  height: 3em;
+  padding: 0em 2em;
+  cursor: pointer;
+  position: relative;
+}
+.hero-selection-dropdown .custom-select {
+  height: 2em;
+  margin-top: 0.5em;
+  padding: 0em 1em;
+  border: 2px solid #75BBEC;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.4);
+  color: #FFF;
+  font-size: 1.5em;
+  position: relative;
+}
+.custom-select-current {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.custom-select-current h4 {
+  margin: 0px;
+  flex: 1;
+  font-weight: normal;
+  color: #75BBEC;
+}
+.custom-select--options {
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 3.3em;
+  left: 2em;
+  right: 2em;
+}
+.custom-select--option {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+.custom-select-option:hover {
+  background-color: #666;
+}
+
+.custom-select--option h4 {
+  margin: 0px;
+  flex: 1;
+  color: #FFF;
+  font-size: 1.5em;
+}
+.custom-select--option:hover h4 {
+  color: #75BBEC;
+}
+.heroes-class {
+
+}
+.heroes-class--symbol {
+
+}
+.heroes-class--group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding-top: 10px;
+}
+.hero-class--hero {
+  margin: 0em 0.5em;
+}
+
+.hero-image {
+  width: 70px;
+  overflow: hidden;
+  transform: skewX(-8deg);
+  transform-origin: bottom left;
+  background-color: rgba(0,0,0,0.5);
+  box-shadow: inset 0px 2px 0px 0px #FFF, inset 0px -1px 0px 0px #FFF;
+  border-radius: 5px;
+  border: 1px solid #FFF;
+}
+.hero-class--hero.selected {
+  margin: 0px 15px;
+}
+.hero-class--hero.selected .hero-image {
+  box-shadow: inset 0px 2px 0px 0px #FFF, inset 0px -1px 0px 0px #FFF, 2px 2px 4px 4px #FFF, -2px -2px 4px 4px #F3D873 ;
+}
+
+.hero-name {
+  color: #FFF;
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: 100;
+  margin: 0.4em;
+}
