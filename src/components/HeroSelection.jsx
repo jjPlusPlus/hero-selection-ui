@@ -96,15 +96,45 @@ class HeroSelection extends Component {
 
   render() {
     return (
-      <div className="hero-selection">
-        <div className="level">
-          <h1>ATTACK</h1>
-          <h3>QUICK PLAY</h3>
-          <h2>KING's ROW</h2>
+      <div className="hero-selection" style={{backgroundImage: `url(${this.state.currentHero.bgSrc})`}}>
+        <div className="hero-selection--header">
+          <div className="level">
+            <h1>ATTACK</h1>
+            <h3>QUICK PLAY</h3>
+            <h2>KING's ROW</h2>
+          </div>
+
+          <div className="hero-selection-dropdown">
+            <div className="custom-select" onClick={() => this.toggleDropdown()}>
+              <div className="custom-select-current">
+                <img src={this.state.heroClass.src} width="25px" height="25px" />
+                {/* <h4>{this.state.heroClass.name}</h4>*/}
+                <FontAwesomeIcon icon={faChevronDown} />
+              </div>
+            </div>
+            {
+              this.state.dropdownVisible
+              ? <div className="custom-select--options">
+                  <div className="custom-select--option" onClick={() => this.handleHeroClassChange("attack")}>
+                    <img src="/img/attack-icon.png" width="25px" height="25px" />
+                    <h4>ATTACK</h4>
+                  </div>
+                  <div className="custom-select--option" onClick={() => this.handleHeroClassChange("tank")}>
+                    <img src="/img/tank-icon.png" width="25px" height="25px" />
+                    <h4>TANK</h4>
+                  </div>
+                  <div className="custom-select--option" onClick={() => this.handleHeroClassChange("support")}>
+                    <img src="/img/support-icon.png" width="25px" height="25px" />
+                    <h4>SUPPORT</h4>
+                  </div>
+                </div>
+              : null
+            }
+          </div>
         </div>
 
         <div className="hero">
-          <h1>BASTION</h1>
+          <h1>{this.state.currentHero.name}</h1>
         </div>
 
         <div className="countdown-wrapper">
@@ -114,7 +144,7 @@ class HeroSelection extends Component {
         <div className="team">
           <div className="teammate">
             <div className="teammate-portrait">
-              <img className="teammate-selected-hero-image" src="/img/selected-heroes/bastion.png" width="50px" />
+              <img className="teammate-selected-hero-image" src={this.state.currentHero.portraitSrc} width="50px" />
             </div>
             <h3 className="teammate-gamertag">XTRAxSALTY</h3>
           </div>
@@ -151,34 +181,6 @@ class HeroSelection extends Component {
         </div>
 
         <div className="heroes">
-
-          <div className="hero-selection-dropdown">
-            <div className="custom-select" onClick={() => this.toggleDropdown()}>
-              <div className="custom-select-current">
-                <img src={this.state.heroClass.src} width="25px" height="25px" />
-                <h4>{this.state.heroClass.name}</h4>
-                <FontAwesomeIcon icon={faChevronDown} />
-              </div>
-            </div>
-            {
-              this.state.dropdownVisible
-              ? <div className="custom-select--options">
-                  <div className="custom-select--option" onClick={() => this.handleHeroClassChange("attack")}>
-                    <img src="/img/attack-icon.png" width="25px" height="25px" />
-                    <h4>ATTACK</h4>
-                  </div>
-                  <div className="custom-select--option" onClick={() => this.handleHeroClassChange("tank")}>
-                    <img src="/img/tank-icon.png" width="25px" height="25px" />
-                    <h4>TANK</h4>
-                  </div>
-                  <div className="custom-select--option" onClick={() => this.handleHeroClassChange("support")}>
-                    <img src="/img/support-icon.png" width="25px" height="25px" />
-                    <h4>SUPPORT</h4>
-                  </div>
-                </div>
-              : null
-            }
-          </div>
 
           { this.state.heroClass.name === "tank"
             ? <div className="heroes-class">
