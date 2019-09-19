@@ -106,6 +106,7 @@ class HeroSelection extends Component {
   }
 
   toggleDropdown() {
+    console.log('yo');
     this.setState({
       dropdownVisible: !this.state.dropdownVisible
     })
@@ -128,7 +129,13 @@ class HeroSelection extends Component {
             </CSSTransition>
           </div>
 
-          <div className="hero-selection-dropdown">
+          <div className={"hero large-up " + (animating ? "animating" : "")}>
+            <CSSTransition appear={true} in={true} timeout={800} classNames="title-animation-up">
+              <h1>{this.state.currentHero.name}</h1>
+            </CSSTransition>
+          </div>
+
+          <div className="hero-selection-dropdown small-only">
             <div className="custom-select" onClick={() => this.toggleDropdown()}>
               <div className="custom-select-current">
                 <img src={this.state.heroClass.src} width="25px" height="25px" />
@@ -157,7 +164,7 @@ class HeroSelection extends Component {
           </div>
         </div>
 
-        <div className={"hero " + (animating ? "animating" : "")}>
+        <div className={"hero small-only " + (animating ? "animating" : "")}>
           <CSSTransition appear={true} in={true} timeout={800} classNames="title-animation-up">
             <h1>{this.state.currentHero.name}</h1>
           </CSSTransition>
@@ -168,6 +175,7 @@ class HeroSelection extends Component {
         </div>
 
         <div className="team">
+          <div className="large-up grid-col-placeholder"></div>
           <CSSTransition appear={true} in={true} timeout={200} classNames="pop-up">
           <div className="teammate">
 
@@ -228,6 +236,35 @@ class HeroSelection extends Component {
 
           </div>
           </CSSTransition>
+          <div className="large-up grid-col-placeholder"></div>
+        </div>
+
+        <div className="hero-selection-dropdown large-up">
+          <div className="custom-select" onClick={() => this.toggleDropdown()}>
+            <div className="custom-select-current">
+              <img src={this.state.heroClass.src} width="25px" height="25px" />
+              <h4>{this.state.heroClass.name}</h4>
+              <FontAwesomeIcon icon={faChevronDown} />
+            </div>
+          </div>
+          {
+            this.state.dropdownVisible
+            ? <div className="custom-select--options">
+                <div className="custom-select--option" onClick={() => this.handleHeroClassChange("attack")}>
+                  <img src="/img/attack-icon.png" width="25px" height="25px" />
+                  <h4>ATTACK</h4>
+                </div>
+                <div className="custom-select--option" onClick={() => this.handleHeroClassChange("tank")}>
+                  <img src="/img/tank-icon.png" width="25px" height="25px" />
+                  <h4>TANK</h4>
+                </div>
+                <div className="custom-select--option" onClick={() => this.handleHeroClassChange("support")}>
+                  <img src="/img/support-icon.png" width="25px" height="25px" />
+                  <h4>SUPPORT</h4>
+                </div>
+              </div>
+            : null
+          }
         </div>
 
         <CSSTransition appear={true} in={true} timeout={500} classNames="pop-up">
@@ -235,10 +272,6 @@ class HeroSelection extends Component {
 
           { this.state.heroClass.name === "tank"
             ? <div className="heroes-class">
-              <div className="heroes-class--symbol">
-                <img src="/img/tank-icon.png" height="1px" width="1px"/>
-              </div>
-
               <div className="heroes-class--group">
                 {
                   tankHeroes.map((hero, index) => {
@@ -259,9 +292,6 @@ class HeroSelection extends Component {
 
           { this.state.heroClass.name === "attack"
             ? <div className="heroes-class">
-              <div className="heroes-class--symbol">
-                <img src="/img/attack-icon.png" height="1px" width="1px"/>
-              </div>
               <div className="heroes-class--group">
                 {
                   attackHeroes.map((hero, index) => {
@@ -282,9 +312,6 @@ class HeroSelection extends Component {
           {
             this.state.heroClass.name === "support"
             ? <div className="heroes-class">
-              <div className="heroes-class--symbol">
-                Support
-              </div>
               <div className="heroes-class--group">
                 {
                   supportHeroes.map((hero, index) => {

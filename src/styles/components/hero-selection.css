@@ -59,6 +59,9 @@
   font-size: 2em;
   font-style: italic;
   margin: 0px;
+  background: -webkit-linear-gradient(#FFF, rgba(255,255,255,0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-top: -.2em;
   margin-left: 1em;
   transition: all 333ms ease;
@@ -251,9 +254,11 @@
   flex-wrap: nowrap;
   overflow-x: scroll;
   padding-top: 10px;
+  justify-content: center;
 }
 .hero-class--hero {
   margin: 0em 0.5em;
+  cursor: pointer;
 }
 
 .hero-image {
@@ -281,4 +286,107 @@
   font-weight: 100;
   margin: 0.4em 0em;
   text-align: center;
+}
+
+/* mobile only */
+@media only screen and (max-width: 640px) {
+  .large-up {
+    display: none;
+  }
+}
+
+/* Medium screens and up */
+@media only screen and (min-width: 641px) {
+
+}
+
+/* tablet only */
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  .large-up {
+    display: none;
+  }
+}
+
+/* Large screens and up */
+@media only screen and (min-width: 1025px) {
+  .small-only {
+    display: none !important;
+  }
+  .level h1 {
+    font-size: 12em;
+  }
+  .level h3 {
+    font-size: 2em;
+    margin-top: -2.5em;
+    margin-left: 6em;
+  }
+  .level h2 {
+    font-size: 5em;
+  }
+  .hero h1 {
+    font-size: 10em;
+    margin-top: 0px;
+    padding-right:20px;
+    background: -webkit-linear-gradient(#FFF 0%, rgba(255,255,255,0) 90%, rgba(255,255,255,0) 100%);
+    -webkit-background-clip: text;
+  }
+  .countdown-wrapper {
+    margin-bottom: 2em;
+  }
+  .countdown-wrapper h3 {
+    font-size: 5em;
+  }
+  .team {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  .teammate-portrait {
+    height: 150px;
+  }
+  .teammate-gamertag {
+    font-size: 1.5em;
+  }
+  .teammate-selected-hero-image {
+    width: 85px;
+  }
+  .hero-selection-dropdown {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100px;
+    margin-top: 2em;
+    z-index: 2;
+  }
+  .hero-selection-dropdown .custom-select {
+    width: auto;
+    min-width: 300px;
+    padding: 10px;
+    font-size: 2em;
+    position: relative;
+  }
+  .hero-selection-dropdown .custom-select--options {
+    top: 10px;
+    right: 50%;
+    width: 340px;
+    transform: translateX(170px);
+  }
+  .custom-select img {
+    width: 40px;
+    height: 40px;
+  }
+  .custom-select .fa-chevron-down {
+    font-size: 20px;
+  }
+}
+
+/* Large screens only */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+
+}
+
+/* XLarge screens */
+@media only screen and (min-width: 1441px) {
+
 }
