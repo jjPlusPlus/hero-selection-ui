@@ -4,6 +4,8 @@ import Select from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+import { CSSTransition } from "react-transition-group";
+
 const heroClassOptions = [
   { name: 'tank', src: '/img/tank-icon.png' },
   { name: 'support', src: '/img/support-icon.png' },
@@ -58,12 +60,14 @@ class HeroSelection extends Component {
     this.state = {
       heroClass: { name: "attack", src: "/img/attack-icon.png" },
       dropdownVisible: false,
+      animating: false,
       currentHero: { name: "Bastion", listSrc: "/img/heroes/bastion.png", bgSrc: "/img/hero-bg/bastion.png", portraitSrc: "/img/selected-heroes/bastion.png" },
     }
     this.handleHeroClassChange = this.handleHeroClassChange.bind(this);
   }
 
   handleHeroClassChange(event) {
+    console.log(event);
     if (event === "support") {
       this.setState({
         heroClass: { name: "support", src: "/img/support-icon.png" },
@@ -83,9 +87,22 @@ class HeroSelection extends Component {
   }
 
   setSelectedHero(hero) {
-    this.setState({
-      currentHero: hero
-    })
+    setTimeout(() => {
+      this.setState({
+        animating: true
+      })
+    }, 100)
+    setTimeout(() => {
+      this.setState({
+        currentHero: hero
+      })
+    }, 200)
+    setTimeout(() => {
+      this.setState({
+        animating: false
+      })
+    }, 250)
+
   }
 
   toggleDropdown() {
@@ -95,13 +112,20 @@ class HeroSelection extends Component {
   }
 
   render() {
+    const animating = this.state.animating;
     return (
-      <div className="hero-selection" style={{backgroundImage: `url(${this.state.currentHero.bgSrc})`}}>
+      <div className={"hero-selection " + (animating ? "animating" : "")} style={  {backgroundImage: `url(${this.state.currentHero.bgSrc})`}  }>
         <div className="hero-selection--header">
           <div className="level">
-            <h1>ATTACK</h1>
-            <h3>QUICK PLAY</h3>
-            <h2>KING's ROW</h2>
+            <CSSTransition appear={true} in={true} timeout={500} classNames="title-animation">
+              <h1>ATTACK</h1>
+            </CSSTransition>
+            <CSSTransition appear={true} in={true} timeout={700} classNames="title-animation">
+              <h3>QUICK PLAY</h3>
+            </CSSTransition>
+            <CSSTransition appear={true} in={true} timeout={800} classNames="title-animation">
+              <h2>KING's ROW</h2>
+            </CSSTransition>
           </div>
 
           <div className="hero-selection-dropdown">
@@ -133,8 +157,10 @@ class HeroSelection extends Component {
           </div>
         </div>
 
-        <div className="hero">
-          <h1>{this.state.currentHero.name}</h1>
+        <div className={"hero " + (animating ? "animating" : "")}>
+          <CSSTransition appear={true} in={true} timeout={800} classNames="title-animation-up">
+            <h1>{this.state.currentHero.name}</h1>
+          </CSSTransition>
         </div>
 
         <div className="countdown-wrapper">
@@ -142,44 +168,69 @@ class HeroSelection extends Component {
         </div>
 
         <div className="team">
+          <CSSTransition appear={true} in={true} timeout={200} classNames="pop-up">
           <div className="teammate">
+
             <div className="teammate-portrait">
               <img className="teammate-selected-hero-image" src={this.state.currentHero.portraitSrc} width="50px" />
             </div>
             <h3 className="teammate-gamertag">XTRAxSALTY</h3>
+
           </div>
+          </CSSTransition>
+          <CSSTransition appear={true} in={true} timeout={300} classNames="pop-up">
           <div className="teammate">
+
             <div className="teammate-portrait">
               <img className="teammate-selected-hero-image" src="/img/selected-heroes/dva.png" width="50px" />
             </div>
             <h3 className="teammate-gamertag">franchizzles</h3>
+
           </div>
+          </CSSTransition>
+          <CSSTransition appear={true} in={true} timeout={400} classNames="pop-up">
           <div className="teammate">
+
             <div className="teammate-portrait">
               <img className="teammate-selected-hero-image" src="/img/selected-heroes/lucio.png" width="50px" />
             </div>
             <h3 className="teammate-gamertag">x100xPercentx</h3>
+
           </div>
+          </CSSTransition>
+          <CSSTransition appear={true} in={true} timeout={500} classNames="pop-up">
           <div className="teammate">
+
             <div className="teammate-portrait">
               <img className="teammate-selected-hero-image" src="/img/selected-heroes/reinhardt.png" width="50px" />
             </div>
             <h3 className="teammate-gamertag">Squortellini</h3>
+
           </div>
+          </CSSTransition>
+          <CSSTransition appear={true} in={true} timeout={600} classNames="pop-up">
           <div className="teammate">
+
             <div className="teammate-portrait">
               <img className="teammate-selected-hero-image" src="/img/selected-heroes/junkrat.png" width="50px" />
             </div>
             <h3 className="teammate-gamertag">brosufgeorge</h3>
+
           </div>
+          </CSSTransition>
+          <CSSTransition appear={true} in={true} timeout={700} classNames="pop-up">
           <div className="teammate">
+
             <div className="teammate-portrait">
               <img className="teammate-selected-hero-image" src="/img/selected-heroes/mercy.png" width="50px" />
             </div>
             <h3 className="teammate-gamertag">kiwibonanza</h3>
+
           </div>
+          </CSSTransition>
         </div>
 
+        <CSSTransition appear={true} in={true} timeout={500} classNames="pop-up">
         <div className="heroes">
 
           { this.state.heroClass.name === "tank"
@@ -252,6 +303,7 @@ class HeroSelection extends Component {
             : null
           }
         </div>
+        </CSSTransition>
       </div>
     )
   }

@@ -8,3 +8,51 @@ body {
 h1, h2, h3, h4, h5, h6, select {
   font-family: "BigNoodleToo", sans-serif;
 }
+
+.title-animation-appear {
+  opacity: 0.1;
+  transform: translateX(-100px);
+}
+.title-animation-appear-done {
+  transform: translateX(0);
+}
+.title-animation-appear.title-animation-appear-active {
+  opacity: 1;
+}
+
+
+.title-animation-up-appear {
+  opacity: 0;
+  background: transparent;
+  transform: translateY(100px);
+}
+.title-animation-up-appear-done {
+  transform: translateY(0);
+  opacity: 1;
+}
+.title-animation-up-leave {
+  /* opacity: 1; */
+  transform: translateX(-100px);
+}
+.title-animation-uo-leave.title-animation-up-leave-active {
+  opacity: 0.00;
+}
+
+.pop-up-appear {
+  opacity: 0;
+  background: transparent;
+  transform: translateY(20px);
+}
+.pop-up-appear-done {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.animating .hero {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animating .hero-image {
+  transform: skew(-10deg) translateY(10px);
+}

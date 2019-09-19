@@ -10,6 +10,7 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  transition: all 100ms ease;
 }
 .hero-selection:after {
   content: "";
@@ -20,6 +21,11 @@
   width: 100vw;
   background-color: rgba(0,0,0,0.2);
   z-index:0;
+}
+
+.hero-selection.animating {
+  background-position-x: 200px;
+  background-position-y: 250px;
 }
 
 .hero-selection--header {
@@ -44,9 +50,9 @@
   background: -webkit-linear-gradient(#D11323, rgba(255,255,255,0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   margin: 0px;
   padding: 0px;
+  transition: all 333ms ease;
 }
 .level h2 {
   color: #FFF;
@@ -55,6 +61,7 @@
   margin: 0px;
   margin-top: -.2em;
   margin-left: 1em;
+  transition: all 333ms ease;
 }
 
 .level h3 {
@@ -64,6 +71,7 @@
   margin: 0px;
   margin-top: -1.5em;
   margin-left: 4em;
+  transition: all 333ms ease;
 }
 
 .hero {
@@ -71,6 +79,7 @@
   z-index: 1;
   text-align: center;
   pointer-events: none;
+  transition: all 80ms linear;
 }
 
 .hero h1 {
@@ -83,6 +92,7 @@
   -webkit-text-fill-color: transparent;
   margin: 0.5em;
   margin-bottom: 0;
+  transition: all 333ms ease;
 }
 
 .countdown-wrapper {
@@ -129,6 +139,7 @@
 .teammate {
   text-align: center;
   margin-bottom: 0.25em;
+  transition: all 333ms ease;
 }
 
 .teammate-portrait {
@@ -162,6 +173,7 @@
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
+  transition: all 333ms ease;
 }
 
 
@@ -253,9 +265,10 @@
   box-shadow: inset 0px 2px 0px 0px #FFF, inset 0px -1px 0px 0px #FFF;
   border-radius: 5px;
   border: 1px solid #FFF;
+  transition: all 100ms ease;
 }
 .hero-class--hero.selected {
-  margin: 0px 15px;
+  /* margin: 0px 15px; */
 }
 .hero-class--hero.selected .hero-image {
   box-shadow: inset 0px 2px 0px 0px #FFF, inset 0px -1px 0px 0px #FFF, 2px 2px 4px 4px #FFF, -2px -2px 4px 4px #F3D873 ;
